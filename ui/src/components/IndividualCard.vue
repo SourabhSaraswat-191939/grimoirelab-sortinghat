@@ -14,9 +14,12 @@
     @dragenter.prevent.stop="isDropZone($event, true)"
     @dragleave="isDropZone($event, false)"
     @click="selectIndividual"
+    color="#003756"
+    dark
+    elevation="7"
   >
     <v-list-item class="grow" three-line>
-      <avatar :name="name" :email="email" :size="30" />
+      <avatar :name="name" :email="email" :size="55" />
 
       <v-list-item-content>
         <v-list-item-title class="font-weight-medium">
@@ -39,14 +42,10 @@
             </template>
             <span>{{ source.name }}</span>
           </v-tooltip>
-        </v-list-item-subtitle>
-      </v-list-item-content>
-
-      <v-list-item-icon>
-        <v-menu offset-y offset-x :close-on-content-click="false">
+          <v-menu offset-y offset-x :close-on-content-click="false">
           <template v-slot:activator="{ on }">
             <v-btn icon v-on="on" @mousedown.stop>
-              <v-icon small>
+              <v-icon color="#FFF" medium>
                 mdi-magnify-plus-outline
               </v-icon>
             </v-btn>
@@ -58,13 +57,19 @@
             :uuid="uuid"
           />
         </v-menu>
+        </v-list-item-subtitle>
+      </v-list-item-content>
+
+      <v-list-item-icon>
+        
         <v-btn text icon @click.stop="$emit('remove')" @mousedown.stop>
-          <v-icon small>
+          <v-icon color="red" small>
             mdi-close
           </v-icon>
         </v-btn>
       </v-list-item-icon>
     </v-list-item>
+    
     <slot />
   </v-card>
 </template>

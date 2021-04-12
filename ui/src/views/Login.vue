@@ -57,7 +57,8 @@ export default {
           password: this.password
         };
         const response = await this.login(authDetails);
-        if (response) {
+        
+        if (response) {          
           this.$router.push("/");
           this.$logger.info(`Log in user ${this.username}`);
         }

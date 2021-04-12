@@ -1,6 +1,6 @@
 <template>
   <v-sheet
-    color="#F5F5F6"
+    color="#f0f8ff"
     class="pa-md-4"
     :class="{ 'is-dragging': isDragging }"
     @drop.native="onDrop($event)"
